@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right,#12c2e9,#c471ed,#f64f56 );
+    }
+
+    .login-container {
+      /* background: #eee5e5; */
+      border-radius: 8px;
+      box-shadow: 2px 2px 8px 10px rgba(48, 31, 31, 0.263);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      /* background: #d10909; */
+    }
+
+    .password-container {
+      position: relative;
+      margin-bottom: 20px;
+      /* background: #000; */
+    }
+
+    .password-input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      /* background: #1daf38; */
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%; 
+      transform: translateY(-50%);
+      cursor: pointer;
+      /* background: #000; */
+      /* color: #fff; */
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form>
+    <div class="password-container">
+      <input type="password" id="password" class="password-input" placeholder="Password">
+      <span class="toggle-password" onclick="togglePassword()">Show</span>
+    </div>
+    <button type="button">Login</button>
+  </form>
+</div>
+
+<script>
+  function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const togglePasswordBtn = document.querySelector('.toggle-password');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      togglePasswordBtn.textContent = 'Hide';
+    } else {
+      passwordInput.type = 'password';
+      togglePasswordBtn.textContent = 'Show';
+    }
+  }
+</script>
+
+</body>
+</html>
